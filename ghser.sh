@@ -16,9 +16,9 @@ done="${Green}[✔]"
 
 # Export and maintain variables | exportando variables y manteniendo
 ghser_start=true
-ghser_path=${PWD}
+ghser_cwd=${PWD}
 ghser_delay=${GHSER_DELAY:-0.2}
-user_id=${USER:-$(whoami)}
+user_id=${USER:-${LOGNAME:-unknown}}
 
 # Colors in the script | colores en el script
 Black="\e[1;30m"
