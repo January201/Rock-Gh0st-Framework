@@ -16,8 +16,9 @@ done="${Green}[✔]"
 
 # Export and maintain variables | exportando variables y manteniendo
 ghser_start=true
-ghser_path=${pwd}
-user_id=$(whoami)
+ghser_path=${PWD}
+ghser_delay=${GHSER_DELAY:-0.2}
+user_id=${USER:-$(whoami)}
 
 # Colors in the script | colores en el script
 Black="\e[1;30m"
@@ -55,14 +56,14 @@ ${White}		⠀⠀⠁⣿⣯⠙⠛⢫⠀⡇⠀⠀⠀⠀⠄⠀⠀⠠⠀⡅⡇⢸⠉�
 echo -e "    ${White}░█▀▀░█░█░${Cyan}█▀█░█▀▀${Purple}░▀█▀░█▀▀░${Blue}█▀▄░█▀█░${Yellow}█▄█░█▀▀░${Green}█░█░█▀█░${White}█▀▄░█░█ ${Reset}"
 echo -e "    ${White}░█░█░█▀█░${Cyan}█░█░▀▀█${Purple}░░█░░█▀▀░${Blue}█▀▄░█▀█░${Yellow}█░█░█▀▀░${Green}█▄█░█░█░${White}█▀▄░█▀▄ ${Reset}"
 echo -e "    ${White}░▀▀▀░▀░▀░${Cyan}▀▀▀░▀▀▀${Purple}░░▀░░▀░░░${Blue}▀░▀░▀░▀░${Yellow}▀░▀░▀▀▀░${Green}▀░▀░▀▀▀░${White}▀░▀░▀░▀ ${Reset}\n"
-echo -e "    ${White}${Bold}[Hello user ${Red}${user_id}${White} welcome to central menu.]   ${Reset}" ; sleep 1.1
-echo -e "    ${White}${Bold}[If you want return or exit, you can use ${Red}(CTRL+C)${White}] ${Reset}\n" ; sleep 1.1
+echo -e "    ${White}${Bold}[Hello user ${Red}${user_id}${White} welcome to central menu.]   ${Reset}" ; sleep "${ghser_delay}"
+echo -e "    ${White}${Bold}[If you want return or exit, you can use ${Red}(CTRL+C)${White}] ${Reset}\n" ; sleep "${ghser_delay}"
 
 }
 
 # The central menu with options | menu central con opciones.
 menu () {
-	echo -e "    ${White}${Bold}[Central menu options] ${Reset}\n" ; sleep 1.1
+	echo -e "    ${White}${Bold}[Central menu options] ${Reset}\n" ; sleep "${ghser_delay}"
 	echo -e "    ${Purple}[00] Script exit"
 	echo -e "    ${Purple}[01] About Gh0stFramework"
 	echo -e "    ${Purple}[02] Script updte"
